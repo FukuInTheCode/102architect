@@ -15,9 +15,9 @@ static int print_name(double a, double b)
     else
         printf("%.2lf and ", a);
     if (fabs(round(b) - b) < 1e-2)
-        printf("%d and \n", (int)round(b));
+        printf("%d\n", (int)round(b));
     else
-        printf("%.2lf and \n", b);
+        printf("%.2lf\n", b);
     return 0;
 }
 
