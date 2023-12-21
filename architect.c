@@ -36,6 +36,8 @@ int main(int argc, char **argv)
 {
     int error = 0;
     my_matrix_t vector = {3, 1,
+        (double *[]){(double []){0.}, (double []){0.}, (double []){1.}}};
+    my_matrix_t res = {3, 1,
         (double *[]){(double []){0.}, (double []){0.}, (double []){0.}}};
     my_matrix_t m = {3, 3, (double *[]){
         (double []){1., 0., 0.},
@@ -45,5 +47,13 @@ int main(int argc, char **argv)
     error |= error_handling(argc, argv, &vector, &m);
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; printf("%lf\n", m.arr[i][j++]));
+    printf("\nvector = \n");
+    res.arr[0][0] = vector.arr[0][0] * m.arr[0][0] +
+        vector.arr[1][0] * m.arr[0][1] + vector.arr[2][0] * m.arr[0][2];
+    res.arr[1][0] = vector.arr[0][0] * m.arr[1][0] +
+        vector.arr[1][0] * m.arr[1][1] + vector.arr[2][0] * m.arr[1][2];
+    res.arr[2][0] = vector.arr[0][0] * m.arr[2][0] +
+        vector.arr[1][0] * m.arr[2][1] + vector.arr[2][0] * m.arr[2][2];
+    for (int i = 0; i < 2; printf("%lf ", res.arr[i++][0]));
     return error;
 }
