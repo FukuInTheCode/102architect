@@ -37,11 +37,15 @@ typedef struct {
     double **arr;
 } my_matrix_t;
 
-int t_param_f(char **, int, int *, my_matrix_t *);
 int multiply_matrices(my_matrix_t *, my_matrix_t *);
+int t_param_f(char **, int, int *, my_matrix_t *);
+int z_param_f(char **, int, int *, my_matrix_t *);
+int r_param_f(char **, int, int *, my_matrix_t *);
 
 static func const my_params[] = {
     t_param_f,
+    z_param_f,
+    r_param_f,
     NULL
 };
 
