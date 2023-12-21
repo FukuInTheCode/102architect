@@ -17,7 +17,6 @@ static int error_handling(int argc, char **argv,
 
     if (argc < 5)
         return 84;
-
     vector->arr[0][0] = strtod(argv[1], &endptr);
     if (endptr != argv[1] + strlen(argv[1]))
         return 84;
@@ -45,15 +44,21 @@ int main(int argc, char **argv)
         (double []){0., 0., 1.}}};
 
     error |= error_handling(argc, argv, &vector, &m);
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 3; printf("%lf\n", m.arr[i][j++]));
-    printf("\nvector = \n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            (j != 2) && (m.arr[i][j] >= 0) && printf("%.2lf   ", m.arr[i][j]);
+            (j == 2) && printf("%.2lf\n", m.arr[i][j]);
+            (j != 2) && (m.arr[i][j] < 0) && printf("%.2lf  ", m.arr[i][j]);
+
+        }
+    }
     res.arr[0][0] = vector.arr[0][0] * m.arr[0][0] +
         vector.arr[1][0] * m.arr[0][1] + vector.arr[2][0] * m.arr[0][2];
     res.arr[1][0] = vector.arr[0][0] * m.arr[1][0] +
         vector.arr[1][0] * m.arr[1][1] + vector.arr[2][0] * m.arr[1][2];
     res.arr[2][0] = vector.arr[0][0] * m.arr[2][0] +
         vector.arr[1][0] * m.arr[2][1] + vector.arr[2][0] * m.arr[2][2];
-    for (int i = 0; i < 2; printf("%lf ", res.arr[i++][0]));
+    printf("(%.2lf, %.2lf) => (%.2lf, %.2lf)\n",
+           vector.arr[0][0], vector.arr[1][0], res.arr[0][0], res.arr[1][0]);
     return error;
 }
