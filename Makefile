@@ -22,6 +22,7 @@ SRC	= architect.c \
 	  params/t_param.c \
 	  params/z_param.c \
 	  params/r_param.c \
+	  params/s_param.c \
 
 OBJ	= $(SRC:.c=.o)
 
