@@ -7,6 +7,20 @@
 
 #include "my.h"
 
+static int print_name(double a, double b)
+{
+    printf("Translation along vector (");
+    if(fabs(round(a) - a) < 1e-2)
+        printf("%d, ", (int)round(a));
+    else
+        printf("%.2lf, ", a);
+    if(fabs(round(b) - b) < 1e-2)
+        printf("%d)\n", (int)round(b));
+    else
+        printf("%.2lf)\n", b);
+    return 0;
+}
+
 int t_param_f(char **argv, int argc, int *i, my_matrix_t *m)
 {
     my_matrix_t tmp = {3, 3, (double *[]){
@@ -26,6 +40,7 @@ int t_param_f(char **argv, int argc, int *i, my_matrix_t *m)
     tmp.arr[1][2] = strtod(argv[2], &endptr);
     if (endptr != argv[2] + strlen(argv[2]))
         return 84;
+    print_name(tmp.arr[0][2], tmp.arr[1][2]);
     multiply_matrices(m, &tmp);
     *i += 3;
     return 0;
