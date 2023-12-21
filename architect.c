@@ -53,11 +53,9 @@ int main(int argc, char **argv)
         }
     }
     res.arr[0][0] = vector.arr[0][0] * m.arr[0][0] +
-        vector.arr[1][0] * m.arr[0][1] + vector.arr[2][0] * m.arr[0][2];
+        vector.arr[1][0] * m.arr[0][1] + m.arr[0][2];
     res.arr[1][0] = vector.arr[0][0] * m.arr[1][0] +
-        vector.arr[1][0] * m.arr[1][1] + vector.arr[2][0] * m.arr[1][2];
-    res.arr[2][0] = vector.arr[0][0] * m.arr[2][0] +
-        vector.arr[1][0] * m.arr[2][1] + vector.arr[2][0] * m.arr[2][2];
+        vector.arr[1][0] * m.arr[1][1] + m.arr[1][2];
     printf("(%.2lf, %.2lf) => (%.2lf, %.2lf)\n",
            vector.arr[0][0], vector.arr[1][0], res.arr[0][0], res.arr[1][0]);
     return error;

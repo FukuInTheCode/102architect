@@ -37,9 +37,9 @@ int multiply_matrices(my_matrix_t *a, my_matrix_t *b)
     double row[3] = {0};
 
     for (int i = 0; i < 3; i++) {
-        get_row(&tmp, i, row);
+        get_row(b, i, row);
         for (int j = 0; j < 3; j++) {
-            get_col(b, j, column);
+            get_col(&tmp, j, column);
             a->arr[i][j] = dot_product(column, row);
         }
     }

@@ -9,11 +9,11 @@
 
 static int print_name(double a)
 {
-    printf("Rotation by a ");
+    printf("Reflection over an axis with an inclination angle of ");
     if(fabs(round(a) - a) < 1e-2)
-        printf("%d degree angle\n", (int)round(a));
+        printf("%d degrees\n", (int)round(a));
     else
-        printf("%.2lf degree angle\n", a);
+        printf("%.2lf degrees\n", a);
     return 0;
 }
 
