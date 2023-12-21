@@ -38,6 +38,7 @@ typedef struct {
 } my_matrix_t;
 
 int t_param_f(char **, int, int *, my_matrix_t *);
+int multiply_matrices(my_matrix_t *, my_matrix_t *);
 
 static func const my_params[] = {
     t_param_f,

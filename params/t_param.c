@@ -26,6 +26,7 @@ int t_param_f(char **argv, int argc, int *i, my_matrix_t *m)
     tmp.arr[1][2] = strtod(argv[2], &endptr);
     if (endptr != argv[2] + strlen(argv[2]))
         return 84;
+    multiply_matrices(m, &tmp);
     *i += 3;
     return 0;
 }

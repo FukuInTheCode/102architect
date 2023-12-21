@@ -18,7 +18,8 @@ CSFML = -lcsfml-system -lcsfml-window -lcsfml-network \
 CRITERION = -lcriterion
 
 SRC	= architect.c \
-	  params/t_param.c
+	  params/t_param.c \
+	  matrix_multiplication.c \
 
 OBJ	= $(SRC:.c=.o)
 

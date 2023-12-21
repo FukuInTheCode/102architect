@@ -43,5 +43,7 @@ int main(int argc, char **argv)
         (double []){0., 0., 1.}}};
 
     error |= error_handling(argc, argv, &vector, &m);
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; printf("%lf\n", m.arr[i][j++]));
     return error;
 }
