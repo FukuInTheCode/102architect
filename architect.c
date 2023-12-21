@@ -36,8 +36,8 @@ static double suppr_zero(double a)
 {
     char buf[100] = {0};
 
-    snprintf(buf, 50, "%lf", a);
-    if (!strncmp("-0", buf, 2))
+    snprintf(buf, 50, "%.2lf", a);
+    if (!strncmp("-0.00", buf, 5))
         return -a;
     return a;
 }
