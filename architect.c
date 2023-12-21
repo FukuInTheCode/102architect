@@ -59,7 +59,8 @@ static int print_all(my_matrix_t *m, my_matrix_t *vector, my_matrix_t *res)
     res->arr[1][0] = vector->arr[0][0] * m->arr[1][0] +
         vector->arr[1][0] * m->arr[1][1] + m->arr[1][2];
     printf("(%.2lf, %.2lf) => (%.2lf, %.2lf)\n",
-        vector->arr[0][0], vector->arr[1][0], res->arr[0][0], res->arr[1][0]);
+        suppr_zero(vector->arr[0][0]), suppr_zero(vector->arr[1][0]),
+        suppr_zero(res->arr[0][0]), suppr_zero(res->arr[1][0]));
     return 0;
 }
 
