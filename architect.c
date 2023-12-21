@@ -35,9 +35,14 @@ static int print_all(my_matrix_t *m, my_matrix_t *vector, my_matrix_t *res)
 {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            (j != 2) && (m->arr[i][j] >= 0) && printf("%.2lf   ",
-                m->arr[i][j]);
-            (j == 2) && printf("%.2lf\n", m->arr[i][j]);
+            (j != 2) && (m->arr[i][j] > 0) &&
+                printf("%.2lf   ", m->arr[i][j]);
+            (j != 2) && (m->arr[i][j] == 0 || m->arr[i][j] == -0.) &&
+                printf("%.2lf   ", m->arr[i][j]);
+            (j == 2) && (m->arr[i][j] != 0.) && (m->arr[i][j] != -0.) &&
+                printf("%.2lf\n", m->arr[i][j]);
+            (j == 2) && (m->arr[i][j] == 0. || m->arr[i][j] == -0.) &&
+                printf("0.00\n");
             (j != 2) && (m->arr[i][j] < 0) && printf("%.2lf  ", m->arr[i][j]);
         }
     }
