@@ -5,7 +5,8 @@
 ## Project Description
  Vector manipulation with multiples transformation matrices
 
-### USAGE\n ./102architect x y transfo1 arg11 [arg12] [transfo2 arg21 [arg22]] ...
+### USAGE
+./102architect x y transfo1 arg11 [arg12] [transfo2 arg21 [arg22]] ...
 # Result: 100% (Mark: 20)
 <details>
 <summary>Click to expand test results</summary>
